@@ -19,7 +19,7 @@
     "check-format": "prettier --check .",
     "check-lint": "eslint . --ext ts --ext .tsx --ext js",
     "postinstall": "prisma generate",
-    "vercel-build": "prisma generate && prisma migrate deploy && next build"
+    "vercel-build": "prisma generate && prisma migrate deploy"
   },
   "keywords": [],
   "author": "",
