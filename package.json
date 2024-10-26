@@ -15,9 +15,11 @@
     "build": "tsc",
     "format": "prettier --write .",
     "prepare": "husky install",
-    "check-types": "tsc --pretty--noEmit",
+    "check-types": "tsc --pretty --noEmit",
     "check-format": "prettier --check .",
-    "check-lint": "eslint . --ext ts --ext .tsx --ext js"
+    "check-lint": "eslint . --ext ts --ext .tsx --ext js",
+    "postinstall": "prisma generate",
+    "vercel-build": "prisma generate && prisma migrate deploy && next build"
   },
   "keywords": [],
   "author": "",
@@ -25,9 +27,14 @@
   "description": "",
   "devDependencies": {
     "@eslint/js": "^9.12.0",
+    "@types/bcrypt": "^5.0.2",
+    "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
+    "@types/jsonwebtoken": "^9.0.7",
+    "@types/uuid": "^10.0.0",
     "eslint": "^8.57.1",
     "eslint-config-standard": "^17.1.0",
+    "eslint-config-standard-with-typescript": "^43.0.1",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-n": "^16.6.2",
     "eslint-plugin-promise": "^6.6.0",
@@ -35,12 +42,24 @@
     "husky": "^9.1.6",
     "prettier": "3.3.3",
     "pretty-quick": "^4.0.0",
+    "prisma": "^5.21.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.6.2",
     "typescript-eslint": "^8.8.0"
   },
   "dependencies": {
+    "@prisma/client": "^5.21.1",
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
     "express": "^4.21.0",
-    "nodemon": "^3.1.7"
+    "joi": "^17.13.3",
+    "jsonwebtoken": "^9.0.2",
+    "moment": "^2.30.1",
+    "nodemon": "^3.1.7",
+    "pino": "^9.4.0",
+    "pino-pretty": "^11.2.2",
+    "uuid": "^10.0.0"
   }
 }

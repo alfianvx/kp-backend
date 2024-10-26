@@ -1,4 +1,4 @@
-    #dependecies
+#dependecies
 /node_modules
 
 # testing
@@ -11,3 +11,6 @@
 #misc
 DS_Store
 .package-lock.json
+
+#env
+.env

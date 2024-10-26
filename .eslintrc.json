@@ -3,7 +3,7 @@
     "es2021": true,
     "node": true
   },
-  "extends": "standard-with-typescript",
+  "extends": ["eslint-config-standard-with-typescript"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": "latest",
@@ -13,6 +13,13 @@
   "plugins": ["@typescript-eslint"],
   "ignorePatterns": ["**/build/*", "**/node_modules/*", "**/public/*", "**/tsconfig.json"],
   "rules": {
-    "@typescript-eslint/restrict-template-expressions": "off"
+    "space-before-function-paren": "off",
+    "@typescript-eslint/restrict-template-expressions": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/consistent-type-imports": "off",
+    "@typescript-eslint/no-unsafe-argument": "off",
+    "@typescript-eslint/strict-boolean-expressions": "off",
+    "@eslint-disable-next-line @typescript-eslint/ban-types": "off",
+    "@typescript-eslint/ban-types": "off"
   }
 }
