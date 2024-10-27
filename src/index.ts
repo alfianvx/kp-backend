@@ -10,7 +10,7 @@ import './utils/connectDB'
 import deserializeToken from './middleware/deserializeToken'
 
 const app = express()
-const PORT = 3000
+const PORT = 5000
 
 // parse body request
 app.use(bodyParser.urlencoded({ extended: false }))
