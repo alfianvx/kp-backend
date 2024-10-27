@@ -58,7 +58,8 @@ export const createSession = async (req: Request, res: Response, next: NextFunct
         profile: {
           email: user.email,
           name: user.name,
-          role: user.role
+          role: user.role,
+          avatar: user.avatar
         },
         accessToken,
         refreshToken
