@@ -30,5 +30,5 @@ app.use(deserializeToken)
 routes(app)
 
 app.listen(PORT, () => {
-  logger.info(`Server running on port : ${PORT}`)
+  logger.info(`Server running on port : ${PORT} 🚀`)
 })

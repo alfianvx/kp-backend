@@ -20,3 +20,7 @@ export const updateFaqHandler = async (id: string, data: FaqType) => {
 export const deleteFaqHandler = async (id: string) => {
   return await prisma.faq.delete({ where: { id } })
 }
+
+export const deleteAllFaqsHandler = async () => {
+  return await prisma.faq.deleteMany()
+}

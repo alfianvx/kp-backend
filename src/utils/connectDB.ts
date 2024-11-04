@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-floating-promises */
 import { prisma } from '../services'
 import { logger } from './logger'
 
@@ -6,7 +5,7 @@ import { logger } from './logger'
 async function main() {
   try {
     await prisma.$connect()
-    logger.info('Database connected successfully 🚀🚀🚀')
+    logger.info('Database connected successfully ✅')
   } catch (error) {
     logger.error('Error connecting to database: ', error)
   }
