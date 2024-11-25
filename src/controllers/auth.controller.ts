@@ -56,6 +56,7 @@ export const createSession = async (req: Request, res: Response, next: NextFunct
       message: 'User logged in successfully',
       data: {
         profile: {
+          id: user.id,
           email: user.email,
           name: user.name,
           role: user.role,
