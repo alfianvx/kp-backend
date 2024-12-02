@@ -27,6 +27,10 @@ model User {
 model Product {
   id          String   @id @default(cuid())
   name        String
+  short_description String
+  slug        String  @unique
+  logo_url    String
+  thumbnail_url String
   description String
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
