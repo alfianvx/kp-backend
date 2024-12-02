@@ -36,6 +36,18 @@ model Product {
   updatedAt   DateTime @updatedAt
 }
 
+model Portofolio {
+    id          String   @id @default(cuid())
+  name        String
+  short_description String
+  slug        String  @unique
+  logo_url    String
+  thumbnail_url String
+  description String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
 model Faq {
   id          String   @id @default(cuid())
   question    String
