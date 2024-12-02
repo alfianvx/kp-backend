@@ -2,7 +2,7 @@ import { NextFunction, Request, Response } from 'express'
 import { logger } from '../utils/logger'
 import { createSessionValidation, createUserValidation, refreshTokenValidation } from '../validation/auth.validation'
 import { comparePassword, encode } from '../utils/hasing'
-import { createUserHandler, findUserByEmail } from '../services/auth.service'
+import { createUserHandler, findUserByEmail, getUsersHandler } from '../services/auth.service'
 import { signJWT, verifyJWT } from '../utils/jwt'
 
 export const registerUser = async (req: Request, res: Response, next: NextFunction): Promise<any> => {
@@ -93,5 +93,16 @@ export const refreshToken = async (req: Request, res: Response, next: NextFuncti
   } catch (error: any) {
     logger.error('ERR: refresh token', error.message)
     return res.status(422).send({ status: false, statusCode: 422, message: error.message })
+  }
+}
+
+export const getUsers = async (req: Request, res: Response, next: NextFunction): Promise<any> => {
+  try {
+    const users = await getUsersHandler()
+    logger.info('INFO: auth - getUsers', 'Users fetched successfully')
+    return res.status(200).send({ status: true, statusCode: 200, message: 'Users fetched successfully', data: users })
+  } catch (error) {
+    logger.error('ERR: auth - getUsers', error)
+    return res.status(422).send({ status: false, statusCode: 422, message: error })
   }
 }

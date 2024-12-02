@@ -9,9 +9,11 @@ import { ServiceRouter } from './service.route'
 import { PortofolioRouter } from './portofolio.route'
 import { WorkflowRouter } from './workflow.route'
 import { PricingRouter } from './pricing.route'
+import { UserRoute } from './user.route'
 
 const _routes: Array<[string, Router]> = [
   ['/health', HealtRouter],
+  ['/user', UserRoute],
   ['/product', ProductRouter],
   ['/auth', AuthRoute],
   ['/faq', FaqRouter],
