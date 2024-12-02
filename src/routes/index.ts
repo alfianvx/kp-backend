@@ -7,6 +7,7 @@ import { ClientRouter } from './client.route'
 import { TestimonialRouter } from './testimonial.route'
 import { ServiceRouter } from './service.route'
 import { PortofolioRouter } from './portofolio.route'
+import { WorkflowRouter } from './workflow.route'
 
 const _routes: Array<[string, Router]> = [
   ['/health', HealtRouter],
@@ -16,7 +17,8 @@ const _routes: Array<[string, Router]> = [
   ['/client', ClientRouter],
   ['/testimonial', TestimonialRouter],
   ['/service', ServiceRouter],
-  ['/portofolio', PortofolioRouter]
+  ['/portofolio', PortofolioRouter],
+  ['/workflow', WorkflowRouter]
 ]
 
 export const routes = (app: Application) => {
