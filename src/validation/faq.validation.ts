@@ -1,5 +1,5 @@
 import Joi from 'joi'
-import { FaqType } from '../type/faq.type'
+import { FaqType } from '../types/faq.type'
 
 export const createFaqValidation = (payload: FaqType) => {
   const schema = Joi.object({

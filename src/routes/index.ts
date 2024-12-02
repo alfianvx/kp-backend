@@ -4,13 +4,15 @@ import { ProductRouter } from './product.route'
 import { AuthRoute } from './auth.route'
 import { FaqRouter } from './faq.route'
 import { ClientRouter } from './client.route'
+import { TestimonialRouter } from './testimonial.route'
 
 const _routes: Array<[string, Router]> = [
   ['/health', HealtRouter],
   ['/product', ProductRouter],
   ['/auth', AuthRoute],
   ['/faq', FaqRouter],
-  ['/client', ClientRouter]
+  ['/client', ClientRouter],
+  ['/testimonial', TestimonialRouter]
 ]
 
 export const routes = (app: Application) => {

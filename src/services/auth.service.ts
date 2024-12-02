@@ -1,5 +1,5 @@
 import { prisma } from '../services'
-import UserType from '../type/user.type'
+import UserType from '../types/user.type'
 
 export const createUserHandler = async (data: UserType) => {
   return await prisma.user.create({ data })

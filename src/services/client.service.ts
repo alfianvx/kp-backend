@@ -1,5 +1,5 @@
 import { prisma } from '.'
-import { ClientType } from '../type/client.type'
+import { ClientType } from '../types/client.type'
 
 export const getClientsHanlder = async () => {
   return await prisma.client.findMany()

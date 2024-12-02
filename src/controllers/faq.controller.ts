@@ -9,7 +9,7 @@ import {
   updateFaqHandler
 } from '../services/faq.service'
 import { createFaqValidation } from '../validation/faq.validation'
-import { FaqParams } from '../type/faq.type'
+import { FaqParams } from '../types/faq.type'
 
 export const getFaq = async (req: Request<FaqParams>, res: Response, next: NextFunction): Promise<void> => {
   try {

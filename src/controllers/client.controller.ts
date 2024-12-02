@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express'
 import { logger } from '../utils/logger'
-import { ClientParams } from '../type/client.type'
+import { ClientParams } from '../types/client.type'
 import {
   createClientHandler,
   deleteAllCLientsHandler,

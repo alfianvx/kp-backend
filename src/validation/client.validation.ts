@@ -1,5 +1,5 @@
 import Joi from 'joi'
-import { ClientType } from '../type/client.type'
+import { ClientType } from '../types/client.type'
 
 export const createClientValidation = (payload: ClientType) => {
   const schema = Joi.object({

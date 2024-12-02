@@ -1,4 +1,4 @@
-import { ProductType } from '../type/product.type'
+import { ProductType } from '../types/product.type'
 import { prisma } from '.'
 
 export const getProductsHanlder = async () => {

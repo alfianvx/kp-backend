@@ -1,5 +1,5 @@
 import { prisma } from '.'
-import { FaqType } from '../type/faq.type'
+import { FaqType } from '../types/faq.type'
 
 export const getFaqsHanlder = async () => {
   return await prisma.faq.findMany()
