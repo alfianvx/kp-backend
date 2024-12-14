@@ -2,7 +2,13 @@ import { NextFunction, Request, Response } from 'express'
 import { logger } from '../utils/logger'
 import { createSessionValidation, createUserValidation, refreshTokenValidation } from '../validation/auth.validation'
 import { comparePassword, encode } from '../utils/hasing'
-import { createUserHandler, findUserByEmail, getUsersHandler } from '../services/auth.service'
+import {
+  createUserHandler,
+  findUserByEmail,
+  getUserByIdHandler,
+  getUsersHandler,
+  updateUserHandler
+} from '../services/auth.service'
 import { signJWT, verifyJWT } from '../utils/jwt'
 
 export const registerUser = async (req: Request, res: Response, next: NextFunction): Promise<any> => {
@@ -104,5 +110,36 @@ export const getUsers = async (req: Request, res: Response, next: NextFunction):
   } catch (error) {
     logger.error('ERR: auth - getUsers', error)
     return res.status(422).send({ status: false, statusCode: 422, message: error })
+  }
+}
+
+export const updateUser = async (req: Request, res: Response, next: NextFunction): Promise<any> => {
+  try {
+    const { id } = req.params
+
+    if (id) {
+      const user = await getUserByIdHandler(id)
+      if (!user) {
+        logger.error('ERR: get - user', 'User not found')
+        res.status(404).json({
+          status: false,
+          statusCode: 404,
+          message: 'User not found'
+        })
+        return
+      }
+    }
+
+    const updatedUser = await updateUserHandler(id, req.body)
+    logger.info('user profile updated successfully')
+    res.status(200).json({
+      status: true,
+      statusCode: 200,
+      message: 'User updated successfully',
+      data: updatedUser
+    })
+  } catch (error) {
+    logger.error('ERR: update - user', error)
+    next(error)
   }
 }
