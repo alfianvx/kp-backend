@@ -5,4 +5,5 @@ export interface PricingType {
   title: string
   description: string
   offer: string[]
+  is_featured: boolean
 }
