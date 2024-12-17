@@ -6,4 +6,5 @@ export interface TestimonialType {
   profession: string
   avatar_url: string
   message: string
+  is_featured: boolean
 }

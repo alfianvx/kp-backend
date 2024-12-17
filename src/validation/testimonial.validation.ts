@@ -6,7 +6,8 @@ export const createTestimoniallValidation = (payload: TestimonialType) => {
     name: Joi.string().required(),
     profession: Joi.string().required(),
     avatar_url: Joi.string().required(),
-    message: Joi.string().required()
+    message: Joi.string().required(),
+    is_featured: Joi.boolean().required()
   })
 
   return schema.validate(payload)

@@ -70,6 +70,7 @@ model Testimonial {
   profession  String
   avatar_url  String
   message     String
+  is_featured Boolean @default(false)
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }
